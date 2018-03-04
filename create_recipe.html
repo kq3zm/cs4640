@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+
+  <meta name = "author" content = "Katherine Qian & Julia Zhou">
+  <meta name = "description" content = "omnomnom">
+  <meta name = "keyword" content = "yummy food recipes yumyumyum"
+
+  <meta charset="UTF-8">
+
+  <title>Create a New Recipe</title>
+
+  <link rel="stylesheet" href="styles/main.css">
+
+  <script>
+  function setFocus (){
+    document.getElementById('rname').focus();
+
+  }
+  </script>
+
+  <script>
+  function validateForm() {
+    var r_name = document.getElementById("rname").value;
+    var r_ingred = document.getElementById("ingred").value;
+    if (r_name == "") {
+      alert("Recipe name must be filled out");
+      return false;
+    }
+    if (r_ingred == ""){
+      alert("Add ingredients needed for this recipe");
+      return false;
+    }
+  }
+  </script>
+
+</head>
+<body onload="setFocus()">
+  <!-- navbar.html code -->
+
+  <h2>CREATE A NEW RECIPE</h2>
+  <form id="create_rform" >
+    <label><b>NAME OF RECIPE <br></b></label>
+    <input type="text" id="rname" name="rname" class="uname" ></input>
+    <br><br>
+    <label><b>DESCRIPTION <br></b></label>
+    <textarea rows="3" id="rdesc" name="rdesc" class="uname"></textarea>
+    <br><br>
+    <label><b> STEPS<br><b></label>
+    <label>STEP 1</label>
+    <input type="text" id="step#" name="step#" class="uname"></input>
+    <br><br>
+    <label><b> INGREDIENTS (TAGS) <br></b></label>
+    <input type="text" id="ingred" name ="ingred" class="uname"><br></input>
+    <br><br>
+
+    <input type="submit" value="Submit" action="/cs4640/index.html" onclick="return validateForm()" method="post"><br>
+
+  </form>
+
+</body>
+</html>

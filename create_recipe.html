@@ -4,7 +4,7 @@
 
   <meta name = "author" content = "Katherine Qian & Julia Zhou">
   <meta name = "description" content = "omnomnom">
-  <meta name = "keyword" content = "yummy food recipes yumyumyum"
+  <meta name = "keyword" content = "yummy food recipes yumyumyum">
 
   <meta charset="UTF-8">
 
@@ -33,13 +33,19 @@
     }
   }
   </script>
-
+	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 </head>
 <body onload="setFocus()">
   <!-- navbar.html code -->
-
-  <h2>CREATE A NEW RECIPE</h2>
-  <form id="create_rform" >
+  <div id="nav-placeholder">
+  </div>
+	<script>
+		$(function(){
+  		$("#nav-placeholder").load("navbar.html");
+		});
+	</script>
+  <h2 style ="margin-left:50px">CREATE A NEW RECIPE</h2>
+  <form id="create_rform" style = "margin-left:50px;">
     <label><b>NAME OF RECIPE <br></b></label>
     <input type="text" id="rname" name="rname" class="uname" ></input>
     <br><br>
@@ -47,9 +53,11 @@
     <textarea rows="3" id="rdesc" name="rdesc" class="uname"></textarea>
     <br><br>
     <label><b> STEPS<br><b></label>
-    <label>STEP 1</label>
+    <label style="font-size:15px;">STEP 1</label>
     <input type="text" id="step#" name="step#" class="uname"></input>
     <br><br>
+    <input type="button" value = "Add step" id="addstep" name="addstep"></input>
+    <br><br><br>
     <label><b> INGREDIENTS (TAGS) <br></b></label>
     <input type="text" id="ingred" name ="ingred" class="uname"><br></input>
     <br><br>

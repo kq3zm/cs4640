@@ -1,5 +1,7 @@
 body{
-  font-family:Verdana;
+  font-family:Trebuchet MS;
+  background: url("../images/background.jpg") no-repeat center fixed;
+  background-size:cover;
 }
 
 #login_page{
@@ -98,3 +100,37 @@ a {
   color: black;
   padding: 14px 16px;
 }
+
+.nav {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  text-align: right;
+  font-weight: 700;
+  font-family: 'Trebuchet MS';
+  background-color: #dde2e3;
+}
+.nav a {
+	color: gray;
+	
+}
+
+#home_page {
+  background-size:cover;
+  margin: 0 auto 0 auto;
+  width:100%;
+  text-align:center;
+  margin: 20px 0px 20px 0px;
+}
+
+.images {
+	width:150px;
+	height:150px;
+	margin-left: 50px;
+	float:left;
+}
+h4.caption {
+  font-size:12px;
+  text-decoration: none;
+  color:gray;
+}
+

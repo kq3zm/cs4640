@@ -50,21 +50,27 @@
 
 	$ans1 = $feedback = NULL;
 	function validForm() {
+		$filled = true;
     	if(isset($_POST["submit"])){
-		if (isset($_POST["name"])){
-    		$r_name = $_POST['name'];
-    		if (empty($r_name)) {
-      			echo "<font color='red'><i>Recipe name must be filled out</i></font> <br />";
+			if (isset($_POST["name"])){
+    			$r_name = $_POST['name'];
+    			if (empty($r_name)) {
+      				echo "<font color='red'><i>Recipe name must be filled out</i></font> <br />";
+    			}
+    			$filled = false;
     		}
-    	}
-    	if (isset($_POST["ingred"])){
-    		$r_ingred = $_POST['ingred'];
-    		if (empty($r_ingred)){
-    			echo "<font color='red'><i>Add ingredients needed for this recipe</i></font> <br />";
+    		if (isset($_POST["ingred"])){
+    			$r_ingred = $_POST['ingred'];
+    			if (empty($r_ingred)){
+    				echo "<font color='red'><i>Add ingredients needed for this recipe</i></font> <br />";
+    			}
+    			$filled = false;
+    		}
+    		if($filled){
+    			header("Location: http://localhost/cs4640/index.html");
     		}
     	}
     }
-	}
     function addStep() {
     	if(isset($_POST["addstep"])){
     		echo "hi";

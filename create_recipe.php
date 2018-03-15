@@ -52,6 +52,9 @@
 	function validForm() {
 		$filled = true;
     	if(isset($_POST["submit"])){
+    		// Andrew King (ak4jd) and Brian King (bmk5cc) helped in figuring out that you need to check if
+    		// the button is pressed to prevent the error message from showing up before entering
+    		// anything
 			if (isset($_POST["name"])){
     			$r_name = $_POST['name'];
     			if (empty($r_name)) {
@@ -71,15 +74,6 @@
     		}
     	}
     }
-    function addStep() {
-    	if(isset($_POST["addstep"])){
-    		echo "hi";
-    		
-    	} else {
-    		
-    	}
-    }
-    addStep();
     	
   	
   	validForm();

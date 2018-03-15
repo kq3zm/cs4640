@@ -48,7 +48,7 @@
     }
   }
 
-  function field_blur(field, uname)
+  function field_blur(field, uname) 
   {
     if(field.value == '')
     {

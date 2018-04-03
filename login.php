@@ -23,7 +23,7 @@
 </head>
 <body onload="setFocus()" id="login_page">
   <div class="login">
-    <form method="post" action="http://localhost:8080/servlets/LoginServlet">
+    <form method="POST" action="http://localhost:8080/servlets/LoginServlet">
       <h1>Login to Your Account</h1>
       <label><b>Username</b></label>
       <input type="uname" id="uname" name="uname" onFocus="field_focus(this, 'username');"

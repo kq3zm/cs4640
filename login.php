@@ -23,14 +23,14 @@
 </head>
 <body onload="setFocus()" id="login_page">
   <div class="login">
-    <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
+    <form method="post" action="http://localhost:8080/servlets/LoginServlet">
       <h1>Login to Your Account</h1>
       <label><b>Username</b></label>
       <input type="uname" id="uname" name="uname" onFocus="field_focus(this, 'username');"
-      value="<?php echo @$_POST['uname']; ?>" onblur="field_blur(this, 'username');" class="uname" />
+      value="<?php echo @$_POST['uname']; ?>" onblur="field_blur(this, 'username');" class="uname"/>
 
       <label><b>Password</b></label>
-      <input type="password" id="pwd" name="pwd" value="password" onFocus="field_focus(this, 'password');" onblur="field_blur(this, 'password');" class="uname" />
+      <input type="password" id="pwd" name="pwd" value="password" onFocus="field_focus(this, 'password');" onblur="field_blur(this, 'password');" class="uname"/>
 
       <input type="submit" id="login_btn" name="login_btn" value="Login" />
 
@@ -67,20 +67,5 @@
   });
   </script>
 
-  <?php
-  $next_page = "index.html";
-  if ($_SERVER['REQUEST_METHOD'] == 'POST')
-  {
-      if (empty($_POST['uname']) || $_POST['uname'] =='username')
-        echo "<font color='red'><i>Please enter your username</i></font> <br />";
-
-      else if (empty($_POST['pwd']) || $_POST['pwd'] =='password')
-        echo "<font color='red'><i>Please enter your password</i></font> <br />";
-      else {
-        header('location:index.html');
-    }
-
-  }
-  ?>
 </body>
 </html>

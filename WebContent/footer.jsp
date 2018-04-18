@@ -2,7 +2,8 @@
   <center>
   <font size=-1>  
     Copyright &copy 2018 <i>Katherine Qian and Julia Zhou</i>. All rights reserved. <br /> 
-    Last update: 22-March-2018
+      <jsp:useBean id = "date" class = "java.util.Date" /> 
+    Last update:  <%= date %>
   </font>
   </center>
 </body>

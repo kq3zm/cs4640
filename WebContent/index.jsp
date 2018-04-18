@@ -31,7 +31,9 @@
 		</nav> 
 	</header> <!--end of Navigation bar--> 
 	</header>
-		
+	
+<%-- 	<jsp:getProperty name="user" property="username"/>
+ --%>	
 	<h2 style="margin-left: 50px;">Recipes For You</h2>
 	<div
 		style="display: inline-block; align: center; vertical-align: middle">

@@ -30,10 +30,14 @@
 		<a href="login.php"> Logout </a> 
 		</nav> 
 	</header> <!--end of Navigation bar--> 
+	
 	</header>
+	
+	<% String search = request.getParameter("search"); %> 
+	<h2> The search for <%= search %> did not yield any results.</h2>
 		
 
-	<%@ include file="footer.jsp"%>
+	<jsp:include page="footer.jsp"/>
 
 </body>
 </html>

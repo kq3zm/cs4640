@@ -18,8 +18,12 @@
 
 <%
     HttpSession s = request.getSession(false); 
+if (request.getParameter("uname")==null){
+}
+else {
    String name = request.getParameter( "uname" );
    s.setAttribute( "theName", name );
+}
 %>
 
 	<header> <!--Navigation bar-->
@@ -38,8 +42,8 @@
 	</header> <!--end of Navigation bar--> 
 	</header>
 	
-	
 	<h2>hello <%= s.getAttribute( "theName" ) %></h2>
+
 	
 
 	<h2 style="margin-left: 50px;">Recipes For You</h2>

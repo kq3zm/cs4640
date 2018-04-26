@@ -16,6 +16,12 @@
 </head>
 <body>
 
+<%
+    HttpSession s = request.getSession(false); 
+   String name = request.getParameter( "uname" );
+   s.setAttribute( "theName", name );
+%>
+
 	<header> <!--Navigation bar-->
 	<div id="nav-placeholder"></div>
 	<header> <nav class="nav"> 
@@ -25,15 +31,17 @@
 	            <button type="submit">Submit</button>
 	     </form>
 	      </div>
-		<a href="index.html">Home </a> 
+		<a href="index.jsp">Home </a> 
 		<a href="create_recipe.php"> Create a Recipe </a> 
-		<a href="login.php"> Logout </a> 
+		<a href="login.jsp"> Logout </a> 
 		</nav> 
 	</header> <!--end of Navigation bar--> 
 	</header>
 	
-<%-- 	<jsp:getProperty name="user" property="username"/>
- --%>	
+	
+	<h2>hello <%= s.getAttribute( "theName" ) %></h2>
+	
+
 	<h2 style="margin-left: 50px;">Recipes For You</h2>
 	<div
 		style="display: inline-block; align: center; vertical-align: middle">

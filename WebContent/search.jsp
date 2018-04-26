@@ -25,9 +25,9 @@
 	            <button type="submit">Submit</button>
 	     </form>
 	      </div>
-		<a href="index.html">Home </a> 
+		<a href="index.jsp">Home </a> 
 		<a href="create_recipe.php"> Create a Recipe </a> 
-		<a href="login.php"> Logout </a> 
+		<a href="login.jsp"> Logout </a> 
 		</nav> 
 	</header> <!--end of Navigation bar--> 
 	

@@ -21,6 +21,7 @@
   </head>
   <body onload="setFocus()" id="login_page">
     <div class="login">
+     <form action ="index.jsp" method= post>
       <h1>Login to Your Account</h1>
       <label><b>Username</b></label>
       <input type="uname" id="uname" name="uname" onFocus="field_focus(this, 'username');" onblur="field_blur(this, 'username');" class="uname" />
@@ -28,15 +29,14 @@
       <label><b>Password</b></label>
       <input type="password" id="pwd" value="password" onFocus="field_focus(this, 'password');" onblur="field_blur(this, 'password');" class="uname" />
 
-      <form>
-          <input type="button" id="login_btn" value="Login" onclick="window.location.href='index.jsp'" />
+          <input type="submit" id="login_btn" value="Login" />
         </form>
 
 
     </div>
    <jsp:useBean id="user" class="beans.userBean" scope="session">  </jsp:useBean>
   <jsp:setProperty name="user" property="username" value='<%= request.getParameter("uname") %>' />
-   
+      
  
   </body>
   </html>

@@ -22,9 +22,9 @@
 
 	<%
 		HttpSession s = request.getSession(false);
-		if (request.getParameter("uname") == null) {
+		if (request.getParameter("unames") == null) {
 		} else {
-			String name = request.getParameter("uname");
+			String name = request.getParameter("unames");
 			s.setAttribute("theName", name);
 		}
 	%>
@@ -39,7 +39,7 @@
 		</form>
 	</div>
 	<a href="index.jsp">Home </a> <a href="http://localhost/cs4640/create_recipe.php"> Create a
-		Recipe </a> <a href="login.jsp"> Logout </a> </nav> </header> <!--end of Navigation bar-->
+		Recipe </a> <a href="http://localhost/cs4640/login.php"> Logout </a> </nav> </header> <!--end of Navigation bar-->
 	</header>
 
 	<h2>

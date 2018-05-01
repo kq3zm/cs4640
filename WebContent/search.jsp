@@ -26,8 +26,8 @@
 	     </form>
 	      </div>
 		<a href="index.jsp">Home </a> 
-		<a href="create_recipe.php"> Create a Recipe </a> 
-		<a href="login.jsp"> Logout </a> 
+		<a href="http://localhost/cs4640/create_recipe.php"> Create a Recipe </a> 
+		<a href="http://localhost/cs4640/login.php"> Logout </a> 
 		</nav> 
 	</header> <!--end of Navigation bar--> 
 	

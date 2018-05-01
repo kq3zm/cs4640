@@ -14,28 +14,35 @@
 
   </script>
 	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"> </script>
 </head>
-<body>
+<body ng-app="myApp" ng-controller="myCtrl">
   <!-- navbar.html code -->
-  <div id="nav-placeholder">
+  <!--Navigation bar-->
+  <div id="nav-placeholder"></div>
+  <header> <nav class="nav">
+  <div class="search">
+    <form class="searchBar" action="http://localhost:8080/servlets/search.jsp" method="post" style="float:left">
+      <input type="text" placeholder="Search for a recipe" name="search">
+      <button type="submit">Submit</button>
+    </form>
   </div>
-	<script>
-		$(function(){
-  		$("#nav-placeholder").load("navbar.html");
-		});
-	</script>
+  <a href="http://localhost:8080/servlets/index.jsp">Home </a> <a href="http://localhost/cs4640/create_recipe.php"> Create a
+    Recipe </a> <a href="http://localhost:8080/servlets/login.jsp"> Logout </a> </nav> </header> <!--end of Navigation bar-->
+
+
   <h2 style ="margin-left:50px">CREATE A NEW RECIPE</h2>
   <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
       <b>NAME OF RECIPE</b> <br/> 
-      <textarea rows="1" cols="50" name="name"></textarea>
+      <input type="text" name="name" ng-model="name"></textarea>
       <br/>    
       <b>DESCRIPTION</b> <br/> 
-      <textarea rows="3" cols="50" name="desc"></textarea>
+      <textarea rows="3" cols="50" name="desc" ng-model="desc"></textarea>
       <br/>  
       <b> STEPS<br><b>
       <div id = "steps">
       <b>STEP 1</b> 
-      <textarea rows="1" cols="43" name="step" ></textarea>
+      <textarea rows="1" cols="43" name="step" ng-model = "step"></textarea>
       <input type="button" value = "Add step" onclick="addSteps()" method="post" id ="add" name="addstep"></input>
       <br/>    
       </div>
@@ -45,6 +52,18 @@
       <input type="submit" name="submit"  onclick="<?php $_SERVER['PHP_SELF'] ?>" method="post"><br> 
       
    </form>
+<div><h1>Name of recipe: {{name}}</h1>
+<h1>Description: {{desc}}</h1>
+<h1>Steps: </h1>
+{{step}}
+</div>
+
+<script> 
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope) {
+    
+}); 
+</script>
    <?php
 	// form handler and form -- same file -- sometimes refer to as "sticky form" 
 
@@ -89,8 +108,10 @@
 			field.setAttribute('rows',1);
 			field.setAttribute('id','styled');
 			field.setAttribute('name', 'step');
+      field.setAttribute('ng-model', 'step');
 			container.appendChild(field);	
 			container.appendChild(br);
+      count +=1;
 		}
 	</script>
 

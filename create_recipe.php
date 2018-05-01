@@ -48,7 +48,7 @@
       <br/> 
       </div>
       <b> INGREDIENTS (TAGS) <br><br/> 
-      <textarea rows="3" cols="50" name="ingred"></textarea>
+      <textarea rows="3" cols="50" name="ingred" ng-model="ingred"></textarea>
       <br/>
       <input type="submit" name="submit"  onclick="<?php $_SERVER['PHP_SELF'] ?>" method="post"><br> 
       

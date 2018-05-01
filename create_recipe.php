@@ -32,7 +32,8 @@
 
 
   <h2 style ="margin-left:50px">CREATE A NEW RECIPE</h2>
-  <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
+  <div style = "height: 100%;width: 50%; float:left;overflow-x: auto;"class = "split left">
+  <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post" >
       <b>NAME OF RECIPE</b> <br/> 
       <input type="text" name="name" ng-model="name"></textarea>
       <br/>    
@@ -40,11 +41,11 @@
       <textarea rows="3" cols="50" name="desc" ng-model="desc"></textarea>
       <br/>  
       <b> STEPS<br><b>
-      <div id = "steps">
+      <div id = "steps" >
       <b>STEP 1</b> 
-      <textarea rows="1" cols="43" name="step" ng-model = "step"></textarea>
-      <input type="button" value = "Add step" onclick="addSteps()" method="post" id ="add" name="addstep"></input>
-      <br/>    
+      <textarea rows="1" cols="43" name="step" ng-model="step"></textarea>
+      <input type="button" value = "Add step" onclick="addSteps()" method="post" id ="add" name="addstep" ng-click= "Step()"></input>
+      <br/> 
       </div>
       <b> INGREDIENTS (TAGS) <br><br/> 
       <textarea rows="3" cols="50" name="ingred"></textarea>
@@ -52,15 +53,33 @@
       <input type="submit" name="submit"  onclick="<?php $_SERVER['PHP_SELF'] ?>" method="post"><br> 
       
    </form>
-<div><h1>Name of recipe: {{name}}</h1>
+   </div>
+
+<div style = "height: 100%;width: 50%; float:right;overflow-x: auto;" class = "split"><h1>Name of recipe: {{name}}</h1>
 <h1>Description: {{desc}}</h1>
 <h1>Steps: </h1>
-{{step}}
+<p>{{steps}}</p>
+<h1>Ingredients (TAGS): {{ingred}}</h1>
 </div>
 
 <script> 
-var app = angular.module('myApp', []);
+var app = angular.module('myApp', [])
 app.controller('myCtrl', function($scope) {
+	var list = "";
+	$scope.steps = document.getElementsByName("step").value;
+    $scope.Step = function() {
+    	elements = document.getElementsByName("step");
+    	list = "";
+    	i = 1;
+    	elements.forEach(function(element) {
+        	if (element.value != ""){
+        	list = list + "Step " + i + " :" + element.value + '\n | ';
+        	i ++;
+        	}
+    	    console.log(element.value);
+    	});
+    	$scope.steps = list;
+    };
     
 }); 
 </script>
@@ -111,7 +130,6 @@ app.controller('myCtrl', function($scope) {
       field.setAttribute('ng-model', 'step');
 			container.appendChild(field);	
 			container.appendChild(br);
-      count +=1;
 		}
 	</script>
 
